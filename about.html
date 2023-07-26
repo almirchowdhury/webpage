@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Portfolio</title>
+    <link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex; 
+            justify-content: center;
+            align-items: center;
+            flex-direction: column; /* to align loader and title vertically */
+            width: 100%;
+            min-height: 100vh;
+            background: #FFFFFF;
+            overflow: scroll;
+        }
+
+        .loader {
+          position: relative;
+          width: 600px;
+          height: 20px;
+          background: #FFF;
+          -webkit-box-reflect: below 1px linear-gradient(transparent,#0005);
+          animation: animate 20s linear infinite;
+          background-size: 500%;
+          border-radius: 10px; 
+        }
+
+        .loader::before,
+        .loader::after
+        {
+          content:'';
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(90deg,#fb0094,#0000ff,#00ff00,#ffff00,#fb0094,#0000ff,#00ff00,#ffff00,#fb0094);
+          animation: animate 20s linear infinite;
+          background-size: 500%;
+          border-radius: 10px; 
+        }
+
+        .loader::after
+        {
+          filter: blur(20px);
+        }
+
+        @keyframes animate
+        {
+          0%
+          {
+            background-position: 500% 0;
+          }
+          100%
+          {
+            background-position: 0 0;
+          }
+        }
+
+        .title {
+            margin-top: 40px; 
+        }
+
+        .title h1 {
+            font-family: 'Russo One', sans-serif;
+            font-size: 24px;
+            color: #000;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="loader"></div>
+    <div class="title">
+      <h1>WLED: Phone-Controlled fully addressable WS2812B LED with ESP32 Microcontroller</h1>
+    </div>
+
+</body>
+</html>
